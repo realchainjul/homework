@@ -1,1 +1,169 @@
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+:root {
+  --base-font-size: 16px;
+  --base-color: #121212;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--base-font-size);
+  color: var(--base-color);
+  margin: 0 1.25rem;
+}
+
+header {
+  margin-bottom: 2.8125rem;
+}
+
+main {
+  inline-size: 100%;
+  max-width: 100%;
+}
+
+form {
+  .input-field {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    input {
+      font-size: 14px;
+      block-size: 2.8125rem;
+      padding-left: 14px;
+      border: 1px solid #dadada;
+      background: #fff;
+      margin-bottom: 0.625rem;
+
+      &:focus {
+        outline: none;
+        border: 1px solid #03cf5d;
+        background-color: #e9f0fd;
+      }
+    }
+
+    span {
+      display: none;
+      color: #ff1414;
+      margin-bottom: 0.625rem;
+    }
+
+    &:focus-within span {
+      display: block;
+    }
+  }
+
+  .login-button {
+    inline-size: 100%;
+    font-size: 16px;
+    block-size: 2.8125rem;
+    border: 1px solid #03cf5d;
+    background: #03cf5d;
+    color: #fff;
+    margin-top: 0.625rem;
+  }
+}
+.account-settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.625rem;
+
+  .login-session {
+    position: relative;
+    input {
+      position: absolute;
+      opacity: 0;
+      inline-size: 1.5rem;
+      block-size: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    label::before {
+      content: '';
+      display: block;
+      inline-size: 1.5rem;
+      block-size: 1.5rem;
+      background-image: url('./unchecked.svg');
+      float: left;
+      margin-right: 0.3125rem;
+    }
+
+    input:checked + label::before {
+      background-image: url(./checked.svg);
+    }
+
+    input:focus-visible + label::before {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  }
+
+  .ip-items {
+    display: none;
+  }
+}
+
+/* 데스크탑일 경우 */
+@media (min-width: 768px) {
+  main {
+    width: 500px;
+  }
+
+  .account-settings .ip-items {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+  }
+
+  .account-settings .ip-items a {
+    text-decoration: none;
+    color: var(--base-color);
+  }
+
+  .account-settings .ip-items input {
+    position: absolute;
+    opacity: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .account-settings .ip-items label::before {
+    content: 'OFF';
+    display: block;
+    font-size: var(--base-font-size);
+  }
+
+  .account-settings .ip-items input:checked + label::before {
+    content: 'ON';
+    color: #03cf5d;
+  }
+
+  .account-settings .ip-items input:focus-visible + label::before {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
