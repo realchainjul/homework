@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -8,9 +8,26 @@
     <link rel="apple-touch-icon" href="./favicon/apple-favicon.svg" />
     <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/card-component.css" />
+    <link rel="stylesheet" href="./styles/apple.css" />
   </head>
   <body>
     <!-- 카드 컴포넌트 -->
-
+    <article>
+      <div class="content">
+        <h3>제품명</h3>
+        <b class="tagline"><span>태그라인</span></b>
+        <p class="release-info" aria-live="polite">출시일 추후 공개</p>
+        <div class="buttons">
+          <a class="black" href="/">더 알아보기</a>
+          <a class="black" href="/">가격 보기</a>
+        </div>
+        <div class="buttons">
+          <a class="blue" href="/">더 알아보기</a>
+          <a class="blue" href="/">가격 보기</a>
+        </div>
+      </div>
+      <!-- 배경 이미지 -->
+      <div class="background-product-image" aria-hidden="true" role="presentation"></div>
+    </article>
   </body>
 </html>
